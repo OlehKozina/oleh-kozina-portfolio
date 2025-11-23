@@ -48,8 +48,9 @@ const sliderVerticalQuery = `
 
 const marqueeQuery = `
     _type == "marquee" =>{
-      logos[]{
-        "logo": asset->url,
+      projects[]{
+        "image": image.asset->url,
+        link
       } 
     }
 `;

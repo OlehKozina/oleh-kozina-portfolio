@@ -9,11 +9,14 @@ export const heroHome = defineType(
 
     fields: [
       F.string({
+        name: "jobName",
+      }),
+      F.string({
         name: "heading",
       }),
-      F.file({
-        name: "video",
-        accept: "video/*",
+      F.image({
+        name: "image",
+        hotspot: true,
       }),
       F.array({
         name: "content",

@@ -14,7 +14,7 @@ type IllustrationProps = {
 const Illustration = ({
   className,
   image,
-  height = 590,
+  height = 1090,
   width = 393,
 }: IllustrationProps) => {
   if (!image) return null;
@@ -62,7 +62,7 @@ const Illustration = ({
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeMiterlimit="10"
-            strokeWidth=".4"
+            strokeWidth=".5"
             style={{ originX: "0.5px", originY: "0.5px" }}
             variants={{
               hidden: {
@@ -89,7 +89,7 @@ const Illustration = ({
         x="0"
         y="0"
       >
-        <Image alt="baker" src={image} width={width} height={height} />
+        <Image alt="myPhoto" src={image} width={width} height={height} />
       </foreignObject>
     </svg>
   );

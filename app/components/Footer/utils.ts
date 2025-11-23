@@ -1,33 +1,22 @@
 import {
-  faInstagram,
+  faGithub,
   faFacebook,
-  faXTwitter,
+  faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-
-export const buildContactLinks = (
-  phone?: string,
-  email?: string,
-  address?: { link?: string; name?: string }
-) =>
-  [
-    phone ? { href: `tel:${phone}`, label: phone } : null,
-    email ? { href: `mailto:${email}`, label: email } : null,
-    address?.link && address?.name
-      ? { href: address.link, label: address.name, external: true }
-      : null,
-  ].filter(Boolean);
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const platforms = {
-  instagram: { icon: faInstagram, label: "Instagram" },
+  github: { icon: faGithub, label: "Github" },
   facebook: { icon: faFacebook, label: "Facebook" },
-  twitter: { icon: faXTwitter, label: "Twitter" },
+  linkedin: { icon: faLinkedin, label: "LinkedIn" },
+  email: { icon: faEnvelope, label: "Email" },
 };
 
 export const buildSocialLinks = (urls?: string[]) =>
   urls?.map((url) => {
-    if (url.includes("instagram")) return { href: url, ...platforms.instagram };
+    if (url.includes("linkedin")) return { href: url, ...platforms.linkedin };
     if (url.includes("facebook")) return { href: url, ...platforms.facebook };
-    if (url.includes("x") || url.includes("twitter"))
-      return { href: url, ...platforms.twitter };
+    if (url.includes("github")) return { href: url, ...platforms.github };
+    if (url.startsWith("mailto:")) return { href: url, ...platforms.email };
     return { href: url, icon: null, label: "Unknown" };
   }) ?? [];

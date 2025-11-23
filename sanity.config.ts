@@ -4,15 +4,15 @@ import schemas from "./sanity/schemas";
 import { visionTool } from "@sanity/vision";
 
 export default defineConfig({
-  projectId: "iiip1pg9",
+  projectId: "k5hnh4x2",
   dataset: "production",
-  title: "DogClub",
-  apiVersion: "2025-10-11",
+  title: "Oleh Kozina Website",
+  apiVersion: "2025-11-21",
   basePath: "/admin",
   plugins: [
     deskTool({
       structure: (S) => {
-        const singletons = ["header", "footer", "privacyPolicy"];
+        const singletons = ["header", "footer"];
 
         return S.list()
           .title("Content")
@@ -28,16 +28,6 @@ export default defineConfig({
               .id("footer")
               .schemaType("footer")
               .child(S.document().schemaType("footer").documentId("footer")),
-
-            S.listItem()
-              .title("Privacy Policy")
-              .id("privacyPolicy")
-              .schemaType("privacyPolicy")
-              .child(
-                S.document()
-                  .schemaType("privacyPolicy")
-                  .documentId("privacyPolicy")
-              ),
             ...S.documentTypeListItems().filter(
               (item) => !singletons.includes(item.getId() ?? "")
             ),

@@ -9,23 +9,28 @@ export const marquee = defineType(
 
     fields: [
       F.array({
-        name: "logos",
-        of: [F.image({ name: "logo" })],
+        name: "projects",
+        of: [
+          F.object({
+            name: "project",
+            fields: [F.image({ name: "image" }), F.string({ name: "link" })],
+            preview: {
+              select: {
+                media: "image",
+                title: "link",
+              },
+            },
+          }),
+        ],
       }),
     ],
 
     preview: {
-      select: {
-        heading: "heading",
-        logos: "logos",
-      },
-      prepare({ heading, logos }: { heading?: string; logos?: string[] }) {
-        const firstAdvantage =
-          Array.isArray(logos) && logos.length ? logos[0] : undefined;
-
+      select: {},
+      prepare() {
         return {
-          title: heading || "Logos",
-          media: firstAdvantage || icon,
+          title: "Projects Marquee",
+          media: icon,
         };
       },
     },
