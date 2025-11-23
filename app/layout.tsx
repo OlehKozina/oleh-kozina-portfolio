@@ -14,7 +14,7 @@ const rowdies = Rowdies({
 
 export const metadata: Metadata = {
   description: "Website for a local bakery",
-  title: "Dog Club",
+  title: "Oleh Kozina Portfolio",
 };
 
 export default async function RootLayout({
