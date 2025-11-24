@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Rowdies } from "next/font/google";
+import { Outfit } from "next/font/google";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Background from "./components/Background";
@@ -7,7 +7,7 @@ import { getHeader, getFooter } from "@/sanity/sanity-utils";
 
 import "./globals.css";
 
-const rowdies = Rowdies({
+const outfit = Outfit({
   subsets: ["latin"],
   weight: ["300", "400", "700"],
 });
@@ -26,7 +26,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={rowdies.className}>
+      <body className={outfit.className}>
         <Header header={header} />
         <Background> {children}</Background>
         <Footer footer={footer} />

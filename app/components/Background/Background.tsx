@@ -9,7 +9,7 @@ export default function Background({
   return (
     <div className="relative overflow-hidden -mt-[--header-height]">
       <div
-        className="fixed inset-0 z-under bg-gradient-to-b from-[#f4faff] to-[#e5f2ff]
+        className="fixed inset-0 z-under bg-[#ebe7e9]
 "
       />
       {children}

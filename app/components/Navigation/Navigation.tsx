@@ -51,13 +51,6 @@ const Navigation = ({
     >
       {navigation?.map((link, index) => {
         const linkRef = React.useRef<HTMLAnchorElement | null>(null);
-        const [linkWidth, setLinkWidth] = React.useState<number | null>(null);
-        const isActive = activeSection === generateId(link?.title || "");
-        React.useEffect(() => {
-          if (linkRef.current) {
-            setLinkWidth(linkRef.current.offsetWidth);
-          }
-        }, []);
 
         return (
           <motion.li
@@ -68,7 +61,10 @@ const Navigation = ({
               hidden: { opacity: 0, y: 10 },
               show: { opacity: 1, y: 0 },
             }}
-            className={clsx("relative flex flex-col items-center")}
+            whileHover={{ scale: 1.05 }}
+            className={clsx(
+              "relative flex flex-col justify-center items-center hover:shadow-lg bg-brand-orange rounded-xl transition-all p-2"
+            )}
           >
             <a
               ref={linkRef}
@@ -82,13 +78,6 @@ const Navigation = ({
             >
               {link.title}
             </a>
-            {linkWidth && isHeader && (
-              <LineSvg
-                className="absolute top-full"
-                width={linkWidth}
-                isHovered={hoveredIndex === index || isActive}
-              />
-            )}
           </motion.li>
         );
       })}

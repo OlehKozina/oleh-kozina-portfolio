@@ -15,14 +15,14 @@ const SocialLinks = ({
 }) => {
   const socialLinks = buildSocialLinks(_socialLinks);
   return (
-    <div className={clsx("flex space-x-4 justify-center", classNames?.root)}>
+    <div className={clsx("flex space-x-6 justify-center", classNames?.root)}>
       {socialLinks?.length &&
         socialLinks?.map((link) => (
           <a
             key={link.label}
             href={link.href}
             aria-label={link.label}
-            className="hover:opacity-50 transition-opacity flex items-center"
+            className="hover:shadow-lg hover:scale-105 transition-all flex items-center p-2 rounded-lg"
           >
             {link.icon && (
               <FontAwesomeIcon

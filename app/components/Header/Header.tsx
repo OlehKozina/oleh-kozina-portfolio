@@ -9,6 +9,7 @@ import SocialLinks from "../Footer/SocialLinks";
 const Header = ({ header }: { header: NavigationType }) => {
   const [hidden, setHidden] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -17,8 +18,8 @@ const Header = ({ header }: { header: NavigationType }) => {
       if (currentY > lastScrollY && currentY > 80) setHidden(true);
       else setHidden(false);
       lastScrollY = currentY;
+      setScrolled(window.scrollY > 0);
     };
-
     window.addEventListener("scroll", updateScroll);
     return () => window.removeEventListener("scroll", updateScroll);
   }, []);
@@ -46,24 +47,23 @@ const Header = ({ header }: { header: NavigationType }) => {
 
   if (!header) return null;
   const { navigation } = header;
-
+  console.log("scrolled", scrolled);
   return (
     <header
       className={clsx(
-        "px-2 top-0 left-0 w-full py-4 z-10 sticky transition-all",
-        hidden && "-translate-y-full"
+        "top-0 left-0 w-full z-10 sticky transition-all bg-brand-orange",
+        hidden && "-translate-y-full",
+        scrolled && "!shadow-lg"
       )}
     >
       <div
-        className={clsx(
-          "container transition-all rounded-3xl p-4 flex justify-between"
-        )}
-        style={{
-          background: "linear-gradient(to right, #A1C4FD, #C2E9FB)",
-        }}
+        className={clsx("container transition-all p-2 flex justify-between")}
       >
         <div className="flex gap-16">
-          <a href="#" className="z-cover relative">
+          <a
+            href="#"
+            className="z-cover relative p-2 rounded-xl transition-all hover:shadow-lg hover:scale-105"
+          >
             <Image src="/logo.svg" alt="logo" width={100} height={24} />
           </a>
           <Navigation

@@ -18,6 +18,8 @@ const mediaWithTextQuery = `
       "_id": navLink->_id,
       heading, 
       content,
+      skills,
+      "pdf": pdf.asset._ref,
       "image": image.asset->url,
       "horizontalImage": image.asset->url,
     }

@@ -7,20 +7,24 @@ export const mediaWithText = defineType(
     name: "mediaWithText",
     icon: FaBook,
     fields: [
-      F.text({
+      F.string({
         name: "heading",
       }),
       F.image({
         name: "image",
         hotspot: true,
       }),
-      F.image({
-        name: "horizontalImage",
-        hotspot: true,
-      }),
       F.array({
         name: "content",
         of: [{ type: "block" }],
+      }),
+      F.array({
+        name: "skills",
+        of: [F.string({ name: "skill" })],
+      }),
+      F.file({
+        name: "pdf",
+        title: "PDF File",
       }),
     ],
 
