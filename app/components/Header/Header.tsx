@@ -59,7 +59,7 @@ const Header = ({ header }: { header: NavigationType }) => {
       <div
         className={clsx("container transition-all p-2 flex justify-between")}
       >
-        <div className="flex gap-16">
+        <div className="flex gap-8 md:gap-16">
           <a
             href="#"
             className="z-cover relative p-2 rounded-xl transition-all hover:shadow-lg hover:scale-105"
@@ -71,7 +71,7 @@ const Header = ({ header }: { header: NavigationType }) => {
             activeSection={activeSection}
             isHeader
             classNames={{
-              root: "hidden md:flex text-white list-none gap-16 justify-center text-lg lg:text-xl font-extrabold",
+              root: "hidden sm:flex text-white list-none gap-8 md:gap-16 justify-center text-lg lg:text-xl font-extrabold",
             }}
           />
         </div>

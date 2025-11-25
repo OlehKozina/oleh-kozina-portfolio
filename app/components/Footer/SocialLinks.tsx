@@ -15,7 +15,12 @@ const SocialLinks = ({
 }) => {
   const socialLinks = buildSocialLinks(_socialLinks);
   return (
-    <div className={clsx("flex space-x-6 justify-center", classNames?.root)}>
+    <div
+      className={clsx(
+        "flex space-x-1 xxs:space-x-3 md:space-x-6 justify-center",
+        classNames?.root
+      )}
+    >
       {socialLinks?.length &&
         socialLinks?.map((link) => (
           <a
@@ -24,7 +29,7 @@ const SocialLinks = ({
             aria-label={link.label}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:shadow-lg hover:scale-105 transition-all flex items-center p-2 rounded-lg"
+            className="hover:shadow-lg hover:scale-105 transition-all flex items-center p-1 xxs:p-2 rounded-lg"
           >
             {link.icon && (
               <FontAwesomeIcon

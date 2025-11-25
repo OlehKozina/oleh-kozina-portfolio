@@ -27,8 +27,8 @@ function MediaWithText({
       id="about-me"
     >
       <div className="container relative bg-button rounded-3xl bg-opacity-80 py-10 text-white">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-0 md:space-x-10 text-base md:text-xl">
-          <div className="max-w-[25rem] w-full hidden md:block">
+        <div className="flex flex-col 1000:flex-row items-center justify-center gap-10 md:gap-0 md:space-x-10 text-base md:text-xl">
+          <div className="max-w-[25rem] w-full hidden 1000:block">
             <Illustration
               image={image}
               className="rounded-3xl"
@@ -67,7 +67,7 @@ function MediaWithText({
                 download
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-brand-orange bg-brand-orange border-2 p-2 rounded-xl hover:shadow-2xl transition-all hover:scale-105 w-min whitespace-nowrap"
+                className="border-brand-orange bg-brand-orange border-2 p-2 rounded-xl hover:shadow-2xl transition-all hover:scale-105 w-min whitespace-nowrap max-md:mx-auto"
               >
                 Download CV
               </a>

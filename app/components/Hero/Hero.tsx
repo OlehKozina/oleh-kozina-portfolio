@@ -11,7 +11,7 @@ const Hero = ({ hero }: { hero: HeroType }) => {
   const { heading, content, image, jobName } = hero;
   return (
     <section
-      className="relative flex items-center overflow-hidden mt-[10rem] text-base md:text-xl"
+      className="relative flex items-center overflow-hidden mt-[10rem] text-base md:text-xl px-6"
       id="hero"
     >
       <div className="container flex justify-center gap-10 h-full items-center bg-button bg-opacity-80 p-6 rounded-3xl text-white">
