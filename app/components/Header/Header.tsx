@@ -47,7 +47,7 @@ const Header = ({ header }: { header: NavigationType }) => {
 
   if (!header) return null;
   const { navigation } = header;
-  console.log("scrolled", scrolled);
+
   return (
     <header
       className={clsx(

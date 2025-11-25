@@ -22,12 +22,14 @@ const SocialLinks = ({
             key={link.label}
             href={link.href}
             aria-label={link.label}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hover:shadow-lg hover:scale-105 transition-all flex items-center p-2 rounded-lg"
           >
             {link.icon && (
               <FontAwesomeIcon
                 icon={link.icon}
-                className={clsx("text-2xl", classNames?.link)}
+                className={clsx("text-2xl text-white", classNames?.link)}
               />
             )}
           </a>

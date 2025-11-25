@@ -6,14 +6,11 @@ import Heading from "../Heading";
 export default function Cards({
   heading,
   cards,
-  _id,
 }: {
   cards?: CardsType;
   heading?: string;
-  _id?: string;
 }) {
   if (!cards) return;
-
   return (
     <section
       className="py-5 md:py-12 relative overflow-hidden max-md:scroll-mt-16 scroll-mt-12"

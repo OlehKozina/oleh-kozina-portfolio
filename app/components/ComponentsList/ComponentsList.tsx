@@ -3,12 +3,11 @@ import dynamic from "next/dynamic";
 
 const componentMap: Record<string, React.ComponentType<any>> = {
   marquee: dynamic(() => import("../Marquee")),
-  cards: dynamic(() => import("../Cards")),
+  projects: dynamic(() => import("../Projects")),
   mediaWithText: dynamic(() => import("../MediaWithText")),
   slider: dynamic(() => import("../Slider")),
   mediaGridWithText: dynamic(() => import("../MediaGridWithText")),
   contact: dynamic(() => import("../Contact")),
-  // sliderVertical: dynamic(() => import("../VerticalSlider")),
   gallery: dynamic(() => import("../Gallery")),
 };
 

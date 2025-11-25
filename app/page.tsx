@@ -7,7 +7,7 @@ export default async function Home() {
 
   const { hero, components } = pageHome[0] || {};
   const ComponentsList = dynamic(() => import("./components/ComponentsList"));
-
+  console.log("compponents", components);
   return (
     <>
       {hero && <Hero hero={hero} />}

@@ -28,6 +28,7 @@ export const pageHome = {
           { type: "contact" },
           { type: "sliderVertical" },
           { type: "gallery" },
+          { type: "projects" },
         ],
       }),
     ]),

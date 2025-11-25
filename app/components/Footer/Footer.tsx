@@ -7,9 +7,9 @@ function Footer({ footer }: { footer?: NavigationType }) {
   if (!footer) return null;
 
   return (
-    <footer className="relative text-center mt-[20rem] py-2 bg-cover bg-opacity-20 bg-center bg-no-repeat md:text-left transition-all">
+    <footer className="relative text-center mt-10 bg-brand-orange py-2 bg-cover bg-center bg-no-repeat md:text-left transition-all">
       <SocialLinks socialLinks={footer.socialLinks} />
-      <p className="text-center mt-2">Oleh Kozina 2025</p>
+      <p className="text-center mb-0 mt-2 text-white">Oleh Kozina 2025</p>
     </footer>
   );
 }

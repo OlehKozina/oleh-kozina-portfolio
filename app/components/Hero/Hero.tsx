@@ -14,7 +14,7 @@ const Hero = ({ hero }: { hero: HeroType }) => {
       className="relative flex items-center overflow-hidden mt-[10rem] text-base md:text-xl"
       id="hero"
     >
-      <div className="container flex justify-center gap-10 h-full items-center bg-button p-6 rounded-3xl text-white">
+      <div className="container flex justify-center gap-10 h-full items-center bg-button bg-opacity-80 p-6 rounded-3xl text-white">
         <div className="max-w-[35rem] lg:max-w-[40rem] flex flex-col gap-4">
           <p className="border-brand-orange border-2 p-2 rounded-xl w-min whitespace-nowrap">
             {jobName}

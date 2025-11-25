@@ -1,17 +1,17 @@
 const cardQuery = `{
-    _key,
-    name,
-    "image": image.asset->url,
-    content,
-  }
-`;
+  _key,
+  name,
+  "image": image.asset->url,
+  content,
+  link
+}`;
 
-const cardsQuery = `
-    _type == "cards" => {
-      "_id": navLink->_id,
-      heading,
-      cards[] ${cardQuery}
-    }
+const projectsQuery = `
+  _type == "projects" => {
+    "_id": navLink->_id,
+    heading,
+    projectCards[] ${cardQuery}
+  }
 `;
 const mediaWithTextQuery = `
     _type == "mediaWithText" =>{
@@ -19,7 +19,7 @@ const mediaWithTextQuery = `
       heading, 
       content,
       skills,
-      "pdf": pdf.asset._ref,
+      "pdf": pdf.asset->url,
       "image": image.asset->url,
       "horizontalImage": image.asset->url,
     }
@@ -72,17 +72,11 @@ const contactQuery = `
       "_id": navLink->_id,
       heading,
       direction,
-      form->{
-        name, 
-        fields,
-        buttonLabel
-      },
-      "privacyPolicy": *[_type == "privacyPolicy"][0].content,
     }
 `;
 
 const queries = [
-  cardsQuery,
+  projectsQuery,
   mediaWithTextQuery,
   sliderQuery,
   sliderVerticalQuery,
