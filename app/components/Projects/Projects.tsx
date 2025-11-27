@@ -3,6 +3,8 @@ import React from "react";
 import Heading from "../Heading";
 import Image from "next/image";
 import { PortableText, PortableTextBlock } from "@portabletext/react";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Projects = ({
   heading,
@@ -14,6 +16,7 @@ const Projects = ({
     link?: string;
     image?: string;
     content?: PortableTextBlock;
+    githubLink?: string;
   }[];
 }) => {
   return (
@@ -26,12 +29,9 @@ const Projects = ({
         <div className="xs:grid-cols-2 grid grid-cols-1 gap-5 md:grid-cols-3">
           {projectCards?.length &&
             projectCards?.map((card) => (
-              <a
-                href={card.link}
-                className="hover:scale-105 transition-transform shadow-lg rounded-xl flex h-full w-full flex-col overflow-hidden bg-button text-white"
+              <div
+                className="shadow-lg rounded-xl flex h-full w-full flex-col overflow-hidden bg-button text-white"
                 key={card.name}
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 {card.image && (
                   <Image
@@ -47,13 +47,28 @@ const Projects = ({
                     <h3 className="text-xl"> {card.name}</h3>
                     {card.content && <PortableText value={card.content} />}
                   </div>
-                  {card.link && (
-                    <button className="text-left border-brand-orange bg-brand-orange border-2 p-2 rounded-xl hover:shadow-2xl transition-all hover:scale-105 w-min whitespace-nowrap">
-                      Go to website
-                    </button>
-                  )}
+                  <div className="flex gap-2">
+                    {card.link && (
+                      <a
+                        className="text-left border-brand-orange bg-brand-orange border-2 p-2 rounded-xl hover:shadow-2xl transition-all hover:scale-110 w-min whitespace-nowrap"
+                        href={card.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Go to website
+                      </a>
+                    )}
+                    {card.githubLink && (
+                      <a
+                        className="text-left border-brand-orange bg-brand-orange border-2 p-2 rounded-xl hover:shadow-2xl transition-all hover:scale-110 w-min whitespace-nowrap"
+                        href={card.githubLink}
+                      >
+                        <FontAwesomeIcon icon={faGithub} />
+                      </a>
+                    )}
+                  </div>
                 </div>
-              </a>
+              </div>
             ))}
         </div>
       </div>

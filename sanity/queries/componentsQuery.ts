@@ -3,7 +3,8 @@ const cardQuery = `{
   name,
   "image": image.asset->url,
   content,
-  link
+  link,
+  githubLink
 }`;
 
 const projectsQuery = `

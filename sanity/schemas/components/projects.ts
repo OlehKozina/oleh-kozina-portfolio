@@ -22,6 +22,9 @@ export const projects = defineType(
               F.string({
                 name: "link",
               }),
+              F.string({
+                name: "githubLink",
+              }),
               F.image({ name: "image", hotspot: true }),
               F.block({ name: "content" }),
             ],
