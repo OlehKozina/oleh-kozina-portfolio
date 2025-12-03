@@ -14,11 +14,6 @@ export const contact = defineType(
       F.string({
         name: "direction",
       }),
-      F.reference({
-        name: "navLink",
-        to: [{ type: "navigation" }],
-        title: "Navigation Link",
-      }),
     ],
     preview: {
       select: {

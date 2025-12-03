@@ -37,9 +37,9 @@ const Projects = ({
                   <Image
                     src={card.image}
                     width={300}
-                    height={150}
+                    height={120}
                     alt="projectImage"
-                    className="relative aspect-[5/3] w-full shrink-0 grow-0 basis-auto rounded-t-xl sm:aspect-1 overflow-hidden border-8 border-button md:aspect-[5/3]"
+                    className="relative w-full shrink-0 grow-0 basis-auto rounded-t-xl sm:aspect-1 overflow-hidden border-8 border-button"
                   />
                 )}
                 <div className="flex flex-col h-full px-2 py-2 sm:px-3 md:py-3 justify-between">
@@ -62,6 +62,8 @@ const Projects = ({
                       <a
                         className="text-left border-brand-orange bg-brand-orange border-2 p-2 rounded-xl hover:shadow-2xl transition-all hover:scale-110 w-min whitespace-nowrap"
                         href={card.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <FontAwesomeIcon icon={faGithub} />
                       </a>
